@@ -51,22 +51,22 @@ unexpected_pass_count=0
 PASS="\e[32mPASS\e[0m"
 FAIL="\e[31mFAIL\e[0m"
 
-TAP_REPORT_FILE=$report
+TAP_REPORT_FILE="report-$CORE_ARGS.tap"
 
 function initialize_tap_report {
-  touch $TAP_REPORT_FILE
+  touch "$TAP_REPORT_FILE"
 }
 
 function pass {
-  echo "ok $@" >> $TAP_REPORT_FILE
+  echo "ok $@" >> "$TAP_REPORT_FILE"
 }
 
 function fail {
-  echo "not ok $@" >> $TAP_REPORT_FILE
+  echo "not ok $@" >> "$TAP_REPORT_FILE"
 }
 
 function end_tap_report {
-  echo "1..$1" >> $TAP_REPORT_FILE
+  echo "1..$1" >> "$TAP_REPORT_FILE"
 }
 
 if [ ! -d $DIR/build/or1k ] ; then
