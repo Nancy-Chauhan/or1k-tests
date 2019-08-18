@@ -51,7 +51,7 @@ unexpected_pass_count=0
 PASS="\e[32mPASS\e[0m"
 FAIL="\e[31mFAIL\e[0m"
 
-TAP_REPORT_FILE=report.tap
+TAP_REPORT_FILE=report-$CORE_ARGS.tap
 
 function initialize_tap_report {
   touch $TAP_REPORT_FILE
